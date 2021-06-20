@@ -28,7 +28,7 @@ run-wave:
 
 .PHONY: run-app
 run-app:
-	./venv/bin/wave run app.main
+	./venv/bin/wave run src.app
 
 .PHONY: format
 format:
