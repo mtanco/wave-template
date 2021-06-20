@@ -90,6 +90,7 @@ def ui_table_from_df(df, name: str, n=10):
 
 def html_python_code(file_to_display):
     """Create code-colored text as html based on python standards"""
+    # TODO: Handle the app being in dark mode - currently this only looks good in the light theme
 
     from pygments import highlight
     from pygments.formatters.html import HtmlFormatter
@@ -100,7 +101,7 @@ def html_python_code(file_to_display):
         contents = f.read()
 
     py_lexer = get_lexer_by_name("python")
-    html_formatter = HtmlFormatter(full=True, style="xcode")
+    html_formatter = HtmlFormatter(full=True, style="colorful")
     code = highlight(contents, py_lexer, html_formatter)
 
     return code

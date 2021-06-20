@@ -11,7 +11,3 @@ class UsecaseConfiguration:
         # Look and Feel
         self.color_primary = "#FFE600"
         self.color_secondary = "#000000"
-
-
-
-
