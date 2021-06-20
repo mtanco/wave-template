@@ -131,3 +131,5 @@ dmypy.json
 # PyCharm CE
 .idea/
 
+# H2O Wave
+wave/
