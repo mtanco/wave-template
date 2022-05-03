@@ -9,11 +9,6 @@ Build a python environment with:
 make setup
 ```
 
-This app currently runs on Wave SDK version 0.16.0. Download and run the Wave server with:
-```shell script
-make wave run-wave
-```
-
 Run the application in development mode which will auto-update with any code changes:
 
 ```shell script
