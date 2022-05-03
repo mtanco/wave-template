@@ -64,7 +64,7 @@ def switch_themes(q: Q):
     else:
         q.page["header"].commands[0].label = "Light Mode"
         q.page["header"].commands[0].icon = "Sunny"
-        q.page["meta"].theme = "neon"
+        q.page["meta"].theme = "h2o-dark"
         q.client.dark_mode = True
 
 

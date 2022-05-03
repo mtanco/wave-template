@@ -98,8 +98,7 @@ def render_base_ui(q: Q):
         box="header",  # Using the grid-based layout to put each card in a specific location
         title=UC.app_title,
         subtitle=UC.app_subtitle,
-        icon=UC.app_icon,
-        icon_color=UC.color_primary,
+        image=UC.app_image,
         commands=[ui.command(name="color_theme")],
         nav=[
             ui.nav_group(
