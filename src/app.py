@@ -91,7 +91,8 @@ def render_base_ui(q: Q):
         title=UC.app_title,
         subtitle=UC.app_subtitle,
         image=UC.app_image,
-        commands=[ui.command(name="color_theme")],
+        items=[ui.menu(items=[ui.command(name="color_theme")])],
+        #commands=[ui.command(name="color_theme")],
         nav=[
             ui.nav_group(
                 label="",

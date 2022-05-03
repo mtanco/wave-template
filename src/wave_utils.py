@@ -57,13 +57,13 @@ async def handle_crash(q: Q, app_name, card_name):
 def switch_themes(q: Q):
     """Change the app from light to dark mode"""
     if q.client.dark_mode:
-        q.page["header"].commands[0].label = "Dark Mode"
-        q.page["header"].commands[0].icon = "ClearNight"
+        q.page["header"].items[0].menu.items[0].label = "Dark Mode"
+        q.page["header"].items[0].menu.items[0].icon = "ClearNight"
         q.page["meta"].theme = "light"
         q.client.dark_mode = False
     else:
-        q.page["header"].commands[0].label = "Light Mode"
-        q.page["header"].commands[0].icon = "Sunny"
+        q.page["header"].items[0].menu.items[0].label = "Light Mode"
+        q.page["header"].items[0].menu.items[0].icon = "Sunny"
         q.page["meta"].theme = "h2o-dark"
         q.client.dark_mode = True
 
