@@ -49,7 +49,6 @@ async def initialize_new_client(q: Q):
 async def initialize_new_user(q: Q):
     """
     This function will setup the app for any user who has not been here before.
-    This specific app has no user-level variables or configuration, this function could be removed.
     """
     if not q.app.initialized:
         await initialize_app(q)
@@ -60,7 +59,7 @@ async def initialize_new_user(q: Q):
 
 async def initialize_app(q: Q):
     """
-    This function will setup the app.
+    This function will setup the app with any information that should be shared across all users
     """
     logger.info("Initializing app.")
 
@@ -77,18 +76,11 @@ def render_base_ui(q: Q):
             ui.layout(
                 breakpoint="xl",
                 width="1200px",
+                height="100vh",
                 zones=[
                     ui.zone("header"),
                     ui.zone("commands"),
-                    ui.zone("full_content"),
-                    ui.zone(
-                        "body",
-                        direction=ui.ZoneDirection.ROW,
-                        zones=[
-                            ui.zone("sidebar", size="25%"),
-                            ui.zone("sidebar_content", size="75%"),
-                        ],
-                    ),
+                    ui.zone("full_content", size="1"),
                     ui.zone("footer"),
                 ],
             )
@@ -98,9 +90,9 @@ def render_base_ui(q: Q):
         box="header",  # Using the grid-based layout to put each card in a specific location
         title=UC.app_title,
         subtitle=UC.app_subtitle,
-        icon=UC.app_icon,
-        icon_color=UC.color_primary,
-        commands=[ui.command(name="color_theme")],
+        image=UC.app_image,
+        items=[ui.menu(items=[ui.command(name="color_theme")])],
+        #commands=[ui.command(name="color_theme")],
         nav=[
             ui.nav_group(
                 label="",
@@ -147,12 +139,10 @@ async def source_code(q: Q):
 
     html_code = html_python_code("app.py")
 
-    q.page["source_code"] = ui.form_card(
+    q.page["source_code"] = ui.frame_card(
         box="full_content",
-        items=[
-            ui.text_xl("Application Code"),
-            ui.frame(content=html_code, height="1000px"),
-        ],
+        title="Application Code",
+        content=html_code
     )
 
     q.client.active_cards.append("source_code")

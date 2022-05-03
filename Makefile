@@ -14,21 +14,9 @@ setup-test: venv setup
 	./venv/bin/pip3 install -r requirements-test.txt
 	./venv/bin/playwright install
 
-wave:
-	wget -O wave.tgz $(WAVE_URL)
-	tar xzf wave.tgz
-	mv wave-*-*-* wave
-	rm -rf wave.tgz
-
-# macOS specific:
-.PHONY: run-wave
-run-wave:
-	osascript -e 'tell application "Terminal" to do script "cd $(WAVE_DIR) ; ./waved"'
-
-
 .PHONY: run-app
 run-app:
-	./venv/bin/wave run src.app
+	H2O_WAVE_NO_LOG=True ./venv/bin/wave run src.app
 
 .PHONY: format
 format:
