@@ -1,4 +1,4 @@
-# Image Detection with Keras and Wave
+# New Project Template
 
 The template I use when starting new H2O Wave app projects. 
 
