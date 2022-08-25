@@ -1,18 +1,38 @@
-# Wave Template
-My personal starting point for creating new H2O Wave Applications.
+# Image Detection with Keras and Wave
+
+The template I use when starting new H2O Wave app projects. 
+
+![Screen1](./static/screenshot-1.png "Screen1")
+
 
 ## Local Development
-By default, we use python 3.7 in the `Makefile` to match the default distribution running in the H2O AI Hybrid Cloud.
 
-Build a python environment with:
-```shell script
-make setup
-```
-
-Run the application in development mode which will auto-update with any code changes:
+Create a python environment in the home app directory and install requirements. Python 3.7 is recommended but not 
+required to align with the default runtime in the AI App Store.
 
 ```shell script
-make run-app
+python3 -m venv venv
+./venv/bin/pip install -r requirements.in
 ```
 
+When running this application locally, I like to not include logs from the 
+Wave server by default to make it easier to read the application logs.
+```shell script
+H2O_WAVE_NO_LOG=True ./venv/bin/wave run src.app
 
+```
+
+Visit the app at http://localhost:10101
+
+## Publish to the AI App Store
+You can test that this app works as expected in your AI App Store using 
+```shell script
+h2o bundle test
+```
+
+And then import the app and publish it to all users with
+```shell script
+h2o bundle import -v ALL_USERS
+```
+
+See the [Installation Instructions](DEPLOY.md) for details as needed.

@@ -1,0 +1,4 @@
+h2o_wave==0.22.0
+pygments==2.9.0
+loguru==0.5.3
+toml==0.10.2

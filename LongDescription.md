@@ -1,0 +1,1 @@
+The template I use when starting new H2O Wave app projects. 

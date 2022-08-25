@@ -2,10 +2,12 @@
 Name = "ai.h2o.wave.template"
 Version = "0.0.1"
 Title = "Template Application"
-Description = ""
-Category = ""
-Keywords = []
-LongDescription = "docs/app_store_description.md"
+Description = "Starter code for your Wave projects"
+Tags = ["OSS", "APP_DEV"]
+LongDescription = "LongDescription.md"
+InstanceLifecycle = "ON_DEMAND"
 
 [Runtime]
 Module = "src.app"
+EnableOIDC = false
+RoutingMode = "BASE_URL"
