@@ -11,3 +11,8 @@ InstanceLifecycle = "ON_DEMAND"
 Module = "src.app"
 EnableOIDC = false
 RoutingMode = "BASE_URL"
+
+[[Env]]
+Name = "HEAP_ID"
+Secret = "heap-analytics"
+SecretKey = "id"

@@ -24,7 +24,7 @@ libraries:
 	mkdir libraries
 
 .PHONY: fat-bundle
-fat-bundle: setup-dev libraries
+fat-bundle: libraries
 	./venv/bin/pip-compile \
 		--quiet \
 		--generate-hashes \
